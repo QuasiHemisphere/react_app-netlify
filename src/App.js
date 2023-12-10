@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LogPage from "./LogInPage/LogPage";
 import SwitchTheme from "./Toogle/SwitchTheme";
 import "./font-awesome/webfonts/all.css";
@@ -6,8 +6,11 @@ import BottomNav from "./LogInPage/Navigation/BottomNav";
 import HomePage from "./NavPage/Components.js/HomePage";
 import Product from "./NavPage/Components.js/Product";
 import RecieptHistory from "./NavPage/Components.js/RecieptHistory";
-import MainFrame from "./NavPage/Components.js/MainFrame";
+
 import Displayer from "./Displayer";
+import SearchHistory from "./NavPage/Components.js/SearchHistory";
+import Dashboard from "./NavPage/Components.js/Dashboard";
+import ChangePassword from "./NavPage/Components.js/ChangePassword";
 
 function App() {
   const [toogle, setToogle] = useState("fa-thin fa-angle-up toogle");
@@ -105,8 +108,16 @@ function App() {
       value: 0,
     },
   ]);
-  const [password, setPassword] = useState(123456);
-  const len = password.toString();
+  const [password, setPassword] = useState(
+    JSON.parse(localStorage.getItem("passwordField")) || 123456
+  );
+  useEffect(() => {
+    localStorage.setItem("passwordField", JSON.stringify(password));
+  }, [password]);
+
+  const toNum = Number(password);
+
+  const len = toNum.toString();
 
   let myArray = Object.values(len);
   const fields = myArray.map((field) => (
@@ -140,13 +151,15 @@ function App() {
 
     let textToNumber = Number(text);
 
-    if (input.size == 6 && textToNumber !== password) {
+    const passLen = password.length;
+
+    if (input.size == passLen && textToNumber !== toNum) {
       input.clear();
       setErrMessage("Opps! Try again");
       setTimeout(function myFunc() {
         setErrMessage("");
       }, 3000);
-    } else if (textToNumber === password) {
+    } else if (textToNumber === toNum) {
       setErrMessage("Login Verified");
 
       setTimeout(function myFunc() {
@@ -166,14 +179,8 @@ function App() {
       title: "Inventory",
     },
     {
-      id: 2,
-      link: "fa-regular fa-search icon nv-icon",
-      checked: false,
-      urls: "#",
-    },
-    {
       id: 3,
-      link: "fa-regular fa-plus icon plus nv-icon",
+      link: "fa-regular fa-atom-simple icon setting nv-icon",
       checked: false,
       urls: "#",
     },
@@ -245,12 +252,46 @@ function App() {
 
   const [display, setDisplay] = useState(<HomePage txtColor={txtColor} />);
 
-  const [recieptHistory, setRecieptHistory] = useState([]);
+  const [recieptHistory, setRecieptHistory] = useState(
+    JSON.parse(localStorage.getItem("receiptStorages")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("receiptStorages", JSON.stringify(recieptHistory));
+  }, [recieptHistory]);
+
+  const [searchHistory, setSearchHistory] = useState("");
+  const [productCopy, setProductCopy] = useState([]);
+
+  const receiptHistoryLength = recieptHistory.length;
+
+  const calculateTotalSales = () => {
+    return productCopy.reduce((sales, reciepts) => sales + reciepts.sales, 0);
+  };
+  const calculateTotalItems = () => {
+    return productCopy.reduce((items, reciepts) => items + reciepts.count, 0);
+  };
+
+  const sales = calculateTotalSales();
+  const items = calculateTotalItems();
 
   function handleNavClick(id) {
     switch (id) {
       case 1:
-        setDisplay(<Product setRecieptHistory={setRecieptHistory} />);
+        setDisplay(
+          <>
+            <Product
+              setRecieptHistory={setRecieptHistory}
+              productCopy={productCopy}
+              setProductCopy={setProductCopy}
+            />
+          </>
+        );
+        break;
+      case 3:
+        setDisplay(
+          <ChangePassword password={password} setPassword={setPassword} />
+        );
         break;
       case 4:
         setDisplay(
@@ -263,18 +304,26 @@ function App() {
                 />
               </>
             ) : (
-              <p className="empty-cart-message">No history Found</p>
+              <p className="empty-cart-messages">No history Found</p>
             )}
           </div>
+        );
+        break;
+      case 5:
+        setDisplay(
+          <Dashboard
+            productCopy={productCopy}
+            setProductCopy={setProductCopy}
+            receiptHistoryLength={receiptHistoryLength}
+            sales={sales}
+            items={items}
+          />
         );
         break;
       default:
       // code block
     }
   }
-
-  const [searchItem, setSearchItem] = useState("");
-  const toUpper = searchItem.toUpperCase();
 
   return (
     <div className="App" style={{ background: bgColor }}>
@@ -304,6 +353,9 @@ function App() {
           input={input}
           errMessage={errMessage}
           passHolder={passHolder}
+          setLogIn={setLogIn}
+          setNavIcon={setNavIcon}
+          setShowNav={setShowNav}
         />
       ) : (
         <Displayer display={display} />

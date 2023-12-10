@@ -13,7 +13,6 @@ const PasswordArea = ({
     <section style={{ display: hideAuth }} className="auth">
       <h4>Enter Password</h4>
       <div className="field-container">{errMessage}</div>
-      <input type="text" value={passHolder} />
       <div className="numpad">
         {setNumpad}
         <i className="undo">

@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "label": "ACETAZOLAMIDE",
+      "description": "CETAMID",
+      "gram": 250,
+      "gramType": "MG",
+      "type": "tablet",
+      "count": 200,
+      "price": 100,
+      "bgColor": "#8AACDE",
+      "sales": 25
+    },
+    {
+      "id": 2,
+      "label": "ACETYLCYSTEINE",
+      "description": "ACTEINSAPH",
+      "gram": 600,
+      "gramType": "MG",
+      "type": "Tablet",
+      "count": 300,
+      "price": 100,
+      "bgColor": "#8AACDE",
+      "sales": 0
+    }
+  ]
+}

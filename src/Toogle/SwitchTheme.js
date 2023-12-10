@@ -11,6 +11,9 @@ const SwitchTheme = ({
 }) => {
   return (
     <nav className="top-nav" style={{ background: navColor }}>
+      <h1>
+        Pharma<span>Flow</span>
+      </h1>
       <i
         className="fa-regular fa-airplay lock-icon nv-icon"
         onClick={handleLock}

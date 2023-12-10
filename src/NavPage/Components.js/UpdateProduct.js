@@ -19,6 +19,8 @@ const UpdateProduct = ({
   handleState,
   updtPrice,
   setUpdtPrice,
+  updtSale,
+  setUpdtSale,
 }) => {
   const [myApp, setMyApp] = useState();
   return (
@@ -77,6 +79,13 @@ const UpdateProduct = ({
               className="six"
               value={updtPrice}
               onChange={(e) => setUpdtPrice(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="200"
+              className="seven"
+              value={updtSale}
+              onChange={(e) => setUpdtSale(e.target.value)}
             />
           </div>
           <nav className="button-area">

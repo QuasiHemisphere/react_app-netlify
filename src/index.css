@@ -33,7 +33,6 @@
   border-radius: 14px;
   padding-right: 6px;
   padding-left: 6px;
-  margin-left: 32%;
 }
 .inner-switch {
   height: 15px;
@@ -77,10 +76,12 @@
   width: 100%;
   top: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  height: 38px;
-  padding-right: 8px;
+  height: 50px;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-bottom: 12px;
 }
 
 .left-date {
@@ -266,6 +267,7 @@
 }
 
 .lock-icon {
+  margin-left: -70px;
   font-size: 16px;
   top: 20px;
 }
@@ -283,6 +285,10 @@
   font-weight: 200;
   margin-bottom: -4px;
   letter-spacing: 0.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
 }
 
 .card-list h6 {
@@ -295,6 +301,10 @@
   font-size: 16px;
   margin-top: 2px;
   letter-spacing: 0.25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 120px;
 }
 
 .card-grm {
@@ -320,6 +330,50 @@ form button {
   height: 16px;
 }
 
+.change-password-cont {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  max-width: 300px;
+  height: 420px;
+  padding: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  justify-content: space-between;
+}
+.change-password-cont label span {
+  font-size: 6px;
+}
+
+.change-password-cont nav button {
+  width: 80px;
+  height: 28px;
+  background-color: rgb(183, 128, 24);
+  border: none;
+  border-radius: 4px;
+}
+
+.change-password-cont nav button:active {
+  background-color: rgb(39, 110, 158);
+}
+
+.change-password-cont nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.change-password-cont input[type="password"] {
+  background-color: bisque;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding-left: 12px;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
@@ -336,6 +390,13 @@ form button {
   align-items: flex-start;
   height: 160px;
   padding-top: 12px;
+  overflow: none;
+}
+
+.search-item {
+  height: 90dvh;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .section {
@@ -344,6 +405,7 @@ form button {
   margin: 4px;
   align-items: flex-end;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .edit-card {
@@ -386,6 +448,7 @@ form button {
   position: fixed;
   bottom: 120px;
   right: 24px;
+  overflow: none;
 }
 
 .card-icon {
@@ -409,7 +472,6 @@ form button {
   padding: 8px;
   border-radius: 50%;
   position: fixed;
-  bottom: 180px;
   right: 24px;
 }
 .add-prod-icon:hover,
@@ -427,7 +489,8 @@ form button {
   height: 500px;
   min-width: 70%;
   top: 10%;
-  left: 18%;
+  left: 50%;
+  transform: translate(-46%, 10%);
   background-color: rgb(205, 205, 232);
   box-shadow: 0 0 30px 0 rgba(33, 30, 30, 0.1);
   display: flex;
@@ -490,15 +553,21 @@ form button {
   background-color: rgb(237, 150, 19);
 }
 
+.atom {
+  position: fixed;
+  font-size: 12px;
+}
+
 .product {
-  overflow: scroll;
+  overflow: auto;
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 100%;
+  width: 96%;
   line-height: 20px;
   align-items: center;
   justify-content: center;
-  margin-left: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .prod {
@@ -531,7 +600,7 @@ form button {
   align-items: flex-end;
   justify-content: flex-end;
   flex-direction: column;
-  height: 365px;
+  height: 420px;
   border-radius: 10px;
 }
 
@@ -602,6 +671,8 @@ form button {
   width: 100%;
   height: 100dvh;
   position: fixed;
+  left: 50%;
+  transform: translate(-50%, 50%);
   top: 0;
   z-index: -0;
 }
@@ -614,7 +685,8 @@ form button {
   font-size: 16px;
   position: fixed;
   bottom: 215px;
-  right: 25px;
+  right: 50px;
+  transform: translate(-50%, 50%);
   width: 20px;
   height: 20px;
 
@@ -637,7 +709,8 @@ form button {
   width: 60%;
   height: 220px;
   top: 25%;
-  left: 21%;
+  left: 50%;
+  transform: translate(-50%, 50%);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -733,8 +806,8 @@ form button {
 .shop-reciept {
   width: 100%;
   position: fixed;
-  top: 0;
-  height: 100dvh;
+  top: 0%;
+  height: 100vh;
   background: linear-gradient(135deg, #c0d3eb 0%, #8998b8 100%);
 }
 
@@ -798,11 +871,12 @@ form button {
 
 .r-nav {
   height: 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 75%;
+  position: fixed;
+  bottom: 95px;
 }
 
 .r-button {
@@ -819,6 +893,12 @@ form button {
 }
 
 .empty-cart-message {
+  font-size: 50px;
+  display: flex;
+  margin-top: 32px;
+  color: rgb(56, 53, 53);
+}
+.empty-cart-messages {
   font-size: 50px;
   display: flex;
   margin-top: 32px;
@@ -845,7 +925,7 @@ form button {
   overflow: auto;
   padding: 12px;
   padding-top: 0;
-  margin-top: 0;
+  margin-top: 32px;
 }
 
 .history-list {
@@ -915,18 +995,19 @@ form button {
 }
 
 .history-container {
-  background-color: #8998b8;
   margin-top: -30px;
 }
 
 input[type="search"] {
-  width: 100%;
+  width: 90%;
   height: 40px;
   margin-bottom: 12px;
   border-radius: 8px;
   border: none;
   outline: none;
-  padding: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  box-shadow: 0 0 60px 1px rgba(1, 3, 15, 0.251);
 }
 
 .display-four {
@@ -935,5 +1016,163 @@ input[type="search"] {
 }
 
 .search-form {
-  margin: 8px;
+  padding: 12x;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-top: 12px;
+}
+
+.receipt-history {
+  margin-top: -30px;
+}
+
+.dashboard-container {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.dashboard-list {
+  background-color: rgb(121, 181, 231);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid rgb(30, 30, 29);
+}
+
+.dashboard-list h1 {
+  font-size: 50px;
+  font-weight: 100;
+  color: rgb(92, 62, 7);
+}
+.dashboard-list h4 {
+  font-weight: 100;
+}
+
+@media only screen and (min-width: 1025px) {
+  .product {
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 97%;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .toogle {
+    position: block;
+  }
+  .shop-reciept {
+    width: 25%;
+    position: block;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    background: linear-gradient(135deg, #c0d3eb 0%, #8998b8 100%);
+    box-shadow: 0 0 100px 1px rgba(0, 0, 0, 1);
+  }
+
+  .r-nav {
+    position: fixed;
+    bottom: 93px;
+    width: 365px;
+  }
+
+  .r-button {
+    width: 200px;
+    margin-left: 6px;
+  }
+  .add-product-form {
+    position: fixed;
+    height: 500px;
+    min-width: 16%;
+    top: 10%;
+    left: 50.3%;
+  }
+
+  .add-to-cart {
+    position: fixed;
+    width: 16%;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  .update-form {
+    background-color: rgb(126, 167, 223);
+    position: fixed;
+    top: 15%;
+    width: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 480px;
+    border-radius: 10px;
+  }
+  .history-tab {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 33% 33% 33%;
+    overflow: hidden;
+  }
+  .history-container {
+    margin: 21px;
+  }
+  .dashboard-container {
+    position: fixed;
+    top: 30%;
+    left: 25%;
+    transform: translate(-50% -50%);
+    width: 50%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+  }
+  .home-page {
+    position: fixed;
+    left: 50%;
+    top: 20;
+    transform: translate(-50%, 50%);
+  }
+
+  .search-form {
+    width: 20%;
+    margin-left: 79%;
+  }
+
+  .update-form {
+    top: 60%;
+    width: 16%;
+    left: 50%;
+  }
+
+  .empty-message-two {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  .empty-cart-messages {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 }

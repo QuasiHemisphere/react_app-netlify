@@ -17,9 +17,18 @@ const LogPage = ({
   input,
   errMessage,
   passHolder,
+  setLogIn,
+  setNavIcon,
+  setShowNav,
 }) => {
+  function handleAtom() {
+    setLogIn(true);
+    setNavIcon("");
+    setShowNav("");
+  }
   return (
     <main className="log-page-container">
+      <i className="fa-regular fa-atom-simple atom" onClick={handleAtom}></i>
       <DateTime
         color={color}
         bgColor={bgColor}

@@ -1,12 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import SearchHistory from "./SearchHistory";
 
 const RecieptHistory = ({ recieptHistory }) => {
+  const [searchHistory, setSearchHistory] = useState("");
+
+  const filterProducts = () => {
+    return recieptHistory.filter((product) =>
+      product.recieptNumber.toString().includes(searchHistory.toString())
+    );
+  };
+
+  const filteredProducts = filterProducts();
+
   function History() {
     return (
       <div className="history-container">
         <ul className="history-tab">
-          {recieptHistory.map((history, index) => (
+          {filteredProducts.map((history, index) => (
             <li key={index} className="history-list">
               <div className="receipt-header">
                 <h6>Transaction number: {history.recieptNumber}</h6>
@@ -40,7 +50,11 @@ const RecieptHistory = ({ recieptHistory }) => {
     );
   }
   return (
-    <div>
+    <div className="receipt-history">
+      <SearchHistory
+        searchHistory={searchHistory}
+        setSearchHistory={setSearchHistory}
+      />
       <History />
     </div>
   );
