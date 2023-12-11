@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_app-netlify/static/css/main.dff76f23.css",
-    "main.js": "/react_app-netlify/static/js/main.5099f4fa.js",
+    "main.css": "/react_app-netlify/static/css/main.810a4daf.css",
+    "main.js": "/react_app-netlify/static/js/main.4ab03c00.js",
     "static/media/fa-duotone-900.ttf": "/react_app-netlify/static/media/fa-duotone-900.59ef6fd19dcb41099b75.ttf",
     "static/media/fa-thin-100.ttf": "/react_app-netlify/static/media/fa-thin-100.b8d87e4e645f629c1724.ttf",
     "static/media/fa-light-300.ttf": "/react_app-netlify/static/media/fa-light-300.b61de802ed7b4b157f8b.ttf",
@@ -19,11 +19,11 @@
     "static/media/fa-v4compatibility.ttf": "/react_app-netlify/static/media/fa-v4compatibility.e48d0e94f22db008735b.ttf",
     "static/media/fa-v4compatibility.woff2": "/react_app-netlify/static/media/fa-v4compatibility.dd9ac4d76851b240ae97.woff2",
     "index.html": "/react_app-netlify/index.html",
-    "main.dff76f23.css.map": "/react_app-netlify/static/css/main.dff76f23.css.map",
-    "main.5099f4fa.js.map": "/react_app-netlify/static/js/main.5099f4fa.js.map"
+    "main.810a4daf.css.map": "/react_app-netlify/static/css/main.810a4daf.css.map",
+    "main.4ab03c00.js.map": "/react_app-netlify/static/js/main.4ab03c00.js.map"
   },
   "entrypoints": [
-    "static/css/main.dff76f23.css",
-    "static/js/main.5099f4fa.js"
+    "static/css/main.810a4daf.css",
+    "static/js/main.4ab03c00.js"
   ]
 }
