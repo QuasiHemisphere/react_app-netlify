@@ -71,7 +71,7 @@ const UpdateProduct = ({
               value={updtMType}
               onChange={(e) => setUpdtMtype(e.target.value)}
             />
-            <h6>Pieces</h6>
+            <h6>Piece/s</h6>
             <input
               type="text"
               placeholder="pieces"
