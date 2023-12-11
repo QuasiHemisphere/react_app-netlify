@@ -594,14 +594,18 @@ form button {
   background-color: rgb(126, 167, 223);
   position: fixed;
   top: 15%;
-  width: 60%;
-  left: 21%;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 1%);
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   flex-direction: column;
-  height: 420px;
+  height: auto;
   border-radius: 10px;
+}
+.update-form h6 {
+  margin-left: 12px;
 }
 
 .input-container {
@@ -614,15 +618,18 @@ form button {
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 10px;
+  border: 1px solid orange;
 }
 
 .input-container input[type="text"] {
   height: 40px;
   width: 100%;
-  background-color: rgb(215, 237, 250);
+  background-color: rgb(160, 180, 192);
   border: none;
   outline: none;
   padding-left: 12px;
+  margin-left: 12px;
+  border-radius: 8px;
 }
 
 .button-area {
@@ -631,6 +638,7 @@ form button {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 .button-area button {

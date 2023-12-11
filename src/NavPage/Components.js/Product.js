@@ -1920,7 +1920,7 @@ const Product = ({ setRecieptHistory, productCopy, setProductCopy }) => {
                 <button
                   className="r-button"
                   onClick={(e) => handleRecieptSubmit(e, reciept.id)}>
-                  Print Reciept
+                  Print Receipt
                 </button>
               </nav>
             </>

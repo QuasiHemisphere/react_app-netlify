@@ -31,6 +31,7 @@ const UpdateProduct = ({
         onSubmit={handleChanges}>
         <div className="input-container">
           <div className="inputs">
+            <h6>Label</h6>
             <input
               type="text"
               placeholder="label"
@@ -38,6 +39,7 @@ const UpdateProduct = ({
               value={updtLabel}
               onChange={(e) => setUpdtLabel(e.target.value)}
             />
+            <h6>description</h6>
             <input
               type="text"
               placeholder="decription"
@@ -45,6 +47,7 @@ const UpdateProduct = ({
               value={updtDesc}
               onChange={(e) => setUpdtDesc(e.target.value)}
             />
+            <h6>Grams</h6>
             <input
               type="text"
               placeholder="grams"
@@ -52,6 +55,7 @@ const UpdateProduct = ({
               value={updtWeight}
               onChange={(e) => setUpdtWeight(e.target.value)}
             />
+            <h6>Gram Type</h6>
             <input
               type="text"
               placeholder="grams type"
@@ -59,6 +63,7 @@ const UpdateProduct = ({
               value={updtWType}
               onChange={(e) => setUpdtWType(e.target.value)}
             />
+            <h6>Medicine Type</h6>
             <input
               type="text"
               placeholder="medicine type"
@@ -66,6 +71,7 @@ const UpdateProduct = ({
               value={updtMType}
               onChange={(e) => setUpdtMtype(e.target.value)}
             />
+            <h6>Pieces</h6>
             <input
               type="text"
               placeholder="pieces"
@@ -73,6 +79,7 @@ const UpdateProduct = ({
               value={updtPieces}
               onChange={(e) => setUpdtPieces(e.target.value)}
             />
+            <h6>Price</h6>
             <input
               type="text"
               placeholder="200"
@@ -80,6 +87,7 @@ const UpdateProduct = ({
               value={updtPrice}
               onChange={(e) => setUpdtPrice(e.target.value)}
             />
+            <h6>Sales</h6>
             <input
               type="text"
               placeholder="200"
