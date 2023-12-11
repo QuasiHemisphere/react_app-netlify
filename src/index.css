@@ -911,6 +911,7 @@ form button {
   display: flex;
   margin-top: 32px;
   color: rgb(56, 53, 53);
+  padding-left: 12px;
 }
 
 .cart-header {
